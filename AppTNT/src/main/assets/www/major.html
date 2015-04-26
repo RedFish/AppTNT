@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Richard GUERCI and Julien SIERRA">
+<meta name="viewport"
+	content="initial-scale=1.0, width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="js/jquery/jquery-1.10.2.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/offcanvas.css" rel="stylesheet">
+
+
+<script>
+	$(function() {
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	});
+</script>
+</head>
+<body>
+	<div id="header"></div>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="text-center">Major incident</h2>
+			In case of major incident, please call immediately the emergency
+			services or ACN Major Incident Helpline to help injured people.
+
+		</div>
+		<div class="jumbotron">
+			<p class="text-center">
+				Emergency Services - <a href="tel:999">999</a>
+			</p>
+		</div>
+		<div class="jumbotron">
+			<p class="text-center">
+				<img src="images/logo112.gif" class="img-center"
+					alt="Responsive image"><br>
+				<br> The EU emergency website - <a href="https://www.112.ie/">https://www.112.ie/</a>
+			</p>
+		</div>
+		<div class="jumbotron">
+			<p class="text-center">
+				<img src="images/logo.jpg" class="img-center" alt="Responsive image"><br>
+				<br> ACN Major Incident Helpline – <a href="tel:086 355 1303">086
+					355 1303</a><br>
+				<br> If you're waiting for a long time without any news from
+				our helpline, you can send a sms by clicking on this button: <br>
+				<br> <a class="btn btn-lg btn-warning btn-block"
+					style="height: 60px; line-height: 35px;"
+					href="sms:086 355 1303?body=This is <Name> requiring more information about my last report <ID report>, please call me back at this number ASAP. Thank you."
+					class="btn large">SMS</a>
+			</p>
+
+		</div>
+	</div>
+
+	<div id="footer"></div>
+</body>
+</html>

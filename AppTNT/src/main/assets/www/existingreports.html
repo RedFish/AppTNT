@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Richard GUERCI and Julien SIERRA">
+<meta name="viewport"
+	content="initial-scale=1.0, width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="js/jquery/jquery-1.10.2.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/offcanvas.css" rel="stylesheet">
+
+
+<script>
+	$(function() {
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	});
+</script>
+</head>
+<body onload="createTable()">
+	<div id="header"></div>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="text-center">Minor Claims Reported</h2>
+			<div id="myAnchor"></div>
+			<script type="text/javascript">
+				function createTable() {
+					var string = "";
+					// ID_customer		date		ID_claim	me?		8*damages	desc 	lat	long 	location
+					string += "<table class=\"table table-striped\"><tr><td>Date</td><td>Claim ID</td><td>desc</td><td>Status</td></tr><tr>";
+					var json = JSON.parse(localStorage.getItem("newkey"));
+					for (var i = 0; i < (json.length) / 16; i++) {
+						string += "<td>" + json[i * 16 + 1] + "</td><td>"
+								+ json[i * 16 + 2] + "</td><td>"
+								+ json[i * 16 + 12]
+								+ "</td><td>In progress</td></tr>";
+					}
+					string += "</tr></table>";
+					document.getElementById("myAnchor").innerHTML = string;
+				}
+			</script>
+
+			<!--  
+				<tr>
+					<td>FIRST1</td>
+					<td>FIRST2</td>
+				</tr>
+				<tr>
+					<td>SECOND1</td>
+					<td>SECOND2</td>
+				</tr>
+				<tr>
+					<td>THIRD1</td>
+					<td>THIRD2</td>
+				</tr>
+-->
+		</div>
+	</div>
+
+	<div id="footer"></div>
+</body>
+</html>

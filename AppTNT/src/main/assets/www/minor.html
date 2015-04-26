@@ -1,0 +1,169 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Richard GUERCI and Julien SIERRA">
+<meta name="viewport"
+	content="initial-scale=1.0, width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="js/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/minor.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/offcanvas.css" rel="stylesheet">
+
+
+<script>
+	$(function() {
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	});
+</script>
+
+<script>
+	$(document).ready(function() {
+		$('#loc').hide();
+	});
+</script>
+</head>
+<body>
+	<div id="header"></div>
+
+	<div class="container">
+		<div class="jumbotron">
+			<form class="form-horizontal" role="form"
+				target="existingreports.html">
+				<div class="form-group" style="line-height: 25px;">
+					<div class="col-sm-offset-2 col-sm-10">
+						<table style="width: 100%">
+							<tr>
+								<td>
+									<p>
+										<b>Party at fault:</b>
+									</p>
+								</td>
+								<td style="width: auto">
+									<div class="radio">
+										<label><input type="radio" name="fault"
+											id="optionsRadios1" value="me" checked>Me </label>
+									</div>
+								</td>
+								<td style="width: auto">
+									<div class="radio">
+										<label> <input type="radio" name="fault"
+											id="optionsRadios2" value="other">&nbsp;Other driver
+										</label>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+
+				<br>
+
+				<table style="width: 100%; line-height: 25px;">
+					<tr>
+						<td>
+							<p>
+								<b>Part of the car damaged:</b>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: bottom; text-align: left;"><label
+							class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox1" value="option1">
+								headlight
+						</label> <label class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox2" value="option2">
+								windshield
+						</label> <label class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox3" value="option3"> bonnet
+						</label> <label class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox4" value="option3"> side
+								window
+						</label></td>
+						<td style="vertical-align: bottom; text-align: left;"><label
+							class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox5" value="option1"> turn
+								signal
+						</label> <label class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox6" value="option2"> bumper
+						</label> <label class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox7" value="option3"> door
+						</label> <label class="checkbox" style="font-weight: normal;"> <input
+								type="checkbox" id="Checkbox8" value="option3"> rear
+								window
+						</label></td>
+					</tr>
+				</table>
+
+				<br>
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<textarea class="form-control" rows="5" name="description"
+							id="description" placeholder="Description of the damage"></textarea>
+					</div>
+				</div>
+
+				<br>
+
+
+				<div class="form-group" style="line-height: 25px;">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="gps" id="gps"
+								checked>&nbsp;&nbsp;Report GPS location of the incident
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					$(document).ready(function() {
+						$('#gps').change(function() {
+							if (!this.checked)
+								$('#loc').fadeIn('slow');
+							else
+								$('#loc').fadeOut('slow');
+
+						});
+					});
+				</script>
+
+
+				<div class="form-group" id="loc">
+					<div class="col-sm-offset-2 col-sm-10">
+						<textarea class="form-control" rows="2" name="location"
+							id="location"
+							placeholder="Location (address, coordinates, ...)"></textarea>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<p class="text-center">
+							<a id="submit_btn" class="btn btn-lg btn-warning btn-block"
+								type="submit" style="height: 60px; line-height: 35px;"
+								role="button" onclick="submitClicked()">Submit report</a>
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+</body>
+</html>
