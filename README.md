@@ -6,5 +6,5 @@ Developed by Richard GUERCI and Julien SIERRA - Dublin, Ireland - April 2014
   
 ## Screenshots:
 
-![ScreenShot1](https://raw.github.com/RedFish/AppTNT/master/ScreenShots/ScreenShot_1.png)
-![ScreenShot2](https://raw.github.com/RedFish/AppTNT/master/ScreenShots/ScreenShot_2.png)
+![ScreenShot1](https://raw.github.com/RedFish/AppTNT/master/Screenshots/Screenshot_1.png)
+![ScreenShot2](https://raw.github.com/RedFish/AppTNT/master/Screenshots/Screenshot_2.png)
